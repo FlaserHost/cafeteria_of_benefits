@@ -484,7 +484,7 @@ input[name="rating"] + label:before {
 input[name="rating"] + label:hover:before,
 input[name="rating"] + label:hover ~ label:before,
 input[name="rating"]:checked ~ label:before {
-    color: gold;
+    color: #ffd700;
 }
 
 input[name="rating"]:not(:last-child) + label,
