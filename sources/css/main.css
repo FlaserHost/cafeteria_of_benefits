@@ -45,6 +45,7 @@ time {
 
 table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 .main-content {
@@ -197,10 +198,6 @@ table {
     transition: height .4s;
 }
 
-.group-table {
-    width: 100%;
-}
-
 .group-table tr {
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
@@ -286,7 +283,7 @@ table {
     justify-content: flex-end;
     color: var(--main-color);
     position: relative;
-    transition-duration: .3s;
+    transition: background-color .3s;
 }
 
 .left-side__btns-block > .btn:first-child {
@@ -543,10 +540,6 @@ input[name="rating"]:not(:last-child) {
     margin-right: 10px;
 }
 
-.story-table {
-    width: 100%;
-}
-
 .story-table tr > td:first-child {
     width: 280px;
 }
@@ -596,7 +589,8 @@ table tr > td:last-child {
     padding: 0 10px 15px 0;
 }
 
-.story-body-btn {
+.story-body-btn,
+.cart-update-btn {
     width: 65px;
     height: 40px;
     border: 1px solid var(--main-color);
@@ -605,7 +599,7 @@ table tr > td:last-child {
     border-radius: 20px;
     cursor: pointer;
     position: relative;
-    transition-duration: .3s;
+    transition: background-color .3s;
 }
 
 .story-body-btn:hover {
@@ -663,5 +657,66 @@ table tr > td:last-child {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.cart-update-btn {
+    background: url('../img/right-side/update.svg') no-repeat center;
+    background-size: 17px;
+    width: 52px;
+    height: 30px;
+}
+
+.cart-update-btn:hover {
+    background-color: var(--main-color);
+    background-image: url('../img/right-side/update_white.svg');
+}
+
+.cart-table {
+    font-size: 14px;
+}
+
+.cart-table tr:first-child {
+    border-bottom: 1px solid #959BAE;
+}
+
+.cart-table tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-table th {
+    text-align: left;
+    color: #959BAE;
+    font-weight: 400;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 12px 12px 12px 20px;
+}
+
+.cart-table tr:not(:last-child) td:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-delete {
+    width: 22px;
+    height: 22px;
+    background: transparent url('../img/right-side/trash.svg') no-repeat center / 22px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: background-image .3s;
+}
+
+.cart-item-delete:hover {
+    background-image: url('../img/right-side/trash_red.svg');
+}
+
+.cart-result-row {
+    background-color: #CEE0F3;
+    color: var(--main-color);
 }
