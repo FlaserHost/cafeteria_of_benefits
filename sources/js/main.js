@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
    benefitsBtns.forEach((btn, _, original) => {
        btn.addEventListener('click', e => {
-           original.forEach(item => item.classList.remove('active'));
-           e.target.classList.add('active');
+           if (!e.target.classList.contains('active')) {
+               original.forEach(item => item.classList.remove('active'));
+               e.target.classList.add('active');
 
-           asideBodies.forEach(item => item.classList.toggle('show'));
+               asideBodies.forEach(item => item.classList.toggle('show'));
+           }
        });
    });
 
