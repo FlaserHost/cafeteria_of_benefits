@@ -290,26 +290,20 @@ table {
     margin-right: 15px;
 }
 
-.scales-btn:before,
-.cart-btn:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: no-repeat center / 100% 100%;
+.scales-btn,
+.cart-btn {
+    background-repeat: no-repeat;
+    background-size: 23px;
 }
 
-.scales-btn:before {
+.scales-btn {
     background-image: url('../img/scales.svg');
-    left: 15%;
+    background-position: 10px;
 }
 
-.cart-btn:before {
+.cart-btn {
     background-image: url('../img/cart.svg');
-    left: 20%;
+    background-position: 13px;
 }
 
 .groups {
