@@ -284,10 +284,16 @@ table {
     justify-content: flex-end;
     color: var(--main-color);
     position: relative;
+    transition-duration: .3s;
 }
 
 .left-side__btns-block > .btn:first-child {
     margin-right: 15px;
+}
+
+.left-side__btns-block > .btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
 }
 
 .scales-btn,
@@ -304,6 +310,14 @@ table {
 .cart-btn {
     background-image: url('../img/cart.svg');
     background-position: 13px;
+}
+
+.scales-btn:hover {
+    background-image: url('../img/scales_white.svg');
+}
+
+.cart-btn:hover {
+    background-image: url('../img/cart_white.svg');
 }
 
 .groups {
@@ -433,7 +447,7 @@ table {
     font-size: 19px;
 }
 
-.feedback-modal-form > * {
+.feedback-modal-form > *:not(:last-child) {
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -455,10 +469,11 @@ input[name="rating"] {
 input[name="rating"] + label {
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
 input[name="rating"] + label:before {
-    content: '\2605';
+    content: '\2605'; /* символ звезды */
     display: block;
     font-size: 40px;
     transition: color .2s;
@@ -580,20 +595,25 @@ table tr > td:last-child {
 }
 
 .story-body-btn {
-    width: 55px;
-    height: 32px;
+    width: 65px;
+    height: 40px;
     border: 1px solid var(--main-color);
     outline: none;
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 20px;
     cursor: pointer;
     position: relative;
+    transition-duration: .3s;
+}
+
+.story-body-btn:hover {
+    background-color: var(--main-color);
 }
 
 .business-btn,
 .chart-btn,
 .edit-btn {
-    background: no-repeat center / 16px;
+    background: no-repeat center / 20px;
 }
 
 .business-btn {
@@ -608,6 +628,18 @@ table tr > td:last-child {
     background-image: url('../img/edit-tools.svg');
 }
 
+.business-btn:hover {
+    background-image: url('../img/business_white.svg');
+}
+
+.chart-btn:hover {
+    background-image: url('../img/bar-chart_white.svg');
+}
+
+.edit-btn:hover {
+    background-image: url('../img/edit-tools_white.svg');
+}
+
 .story-body-btn:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 15px;
 }
