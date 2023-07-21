@@ -39,6 +39,10 @@ img {
     object-fit: cover;
 }
 
+time {
+    display: block;
+}
+
 .main-content {
     padding: 0 20px;
 }
@@ -360,4 +364,34 @@ img {
 
 .stars > img:not(:last-child) {
     margin-right: 5px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    top: 16px;
+    left: initial;
+}
+
+.swiper-button-prev {
+    right: 47px;
+}
+
+.swiper-button-next {
+    right: -5px;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    background: url('../img/arrow.svg') no-repeat center / 100% 100%;
+    content: '';
+    width: 25px;
+    height: 25px;
+}
+
+.swiper-button-next:after {
+    transform: rotate(180deg);
+}
+
+.swiper-slide > *:not(:last-child) {
+    margin-bottom: 10px;
 }
