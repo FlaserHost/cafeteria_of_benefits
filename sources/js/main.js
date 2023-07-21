@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
         loop: true,
+        spaceBetween: 10,
 
         navigation: {
             nextEl: '.swiper-button-next',
