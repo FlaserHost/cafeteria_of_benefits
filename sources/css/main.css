@@ -43,6 +43,10 @@ time {
     display: block;
 }
 
+table {
+    border-collapse: collapse;
+}
+
 .main-content {
     padding: 0 20px;
 }
@@ -195,10 +199,6 @@ time {
     width: 100%;
 }
 
-.group-table {
-    border-collapse: collapse;
-}
-
 .group-table tr {
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
@@ -225,8 +225,18 @@ time {
     background-image: url('../img/checked.svg');
 }
 
-.group-table tr:hover {
+.status {
+    transition: color .3s;
+}
+
+.group-table tr:hover,
+.story-table tr:hover {
     background-color: var(--main-color);
+}
+
+.group-table tr:hover,
+.story-table tr:hover,
+.story-table tr:hover .status {
     color: #fff;
 }
 
@@ -520,4 +530,51 @@ input[name="rating"]:not(:last-child) {
 
 .feedback-modal-btn:first-child {
     margin-right: 10px;
+}
+
+.story-table {
+    width: 100%;
+}
+
+.story-table tr > td:first-child {
+    width: 280px;
+}
+
+.story-table tr > td:first-child > time {
+    display: inline;
+}
+
+.story-table tr {
+    cursor: pointer;
+    transition-duration: .3s;
+}
+
+.story-table tr:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.story-table tr > td {
+    padding: 10px 14px;
+    font-size: 15px;
+}
+
+.story-table tr > td:first-child {
+    border-radius: 7px 0 0 7px;
+}
+
+.story-table tr > td:last-child {
+    border-radius: 0 7px 7px 0;
+}
+
+.approved {
+    color: #27AE60;
+}
+
+.body-groups-wrapper,
+.body-story-wrapper {
+    display: none;
+}
+
+.show {
+    display: block;
 }

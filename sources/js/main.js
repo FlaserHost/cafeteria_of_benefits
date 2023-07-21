@@ -6,11 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
    const leaveFeedback = document.getElementById('leave-feedback');
    const modal = document.querySelector('.modal');
    const closeModalBtn = document.getElementById('close-modal-btn');
+   const asideBodies = document.querySelectorAll('.aside-body-wrapper');
 
    benefitsBtns.forEach((btn, _, original) => {
        btn.addEventListener('click', e => {
            original.forEach(item => item.classList.remove('active'));
            e.target.classList.add('active');
+
+           asideBodies.forEach(item => item.classList.toggle('show'));
        });
    });
 
