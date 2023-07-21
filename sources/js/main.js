@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
    const group = document.querySelectorAll('.group');
    const checkboxes = document.querySelectorAll('.benefit-check');
    const scalesBtn = document.getElementById('scales-btn');
+   const leaveFeedback = document.getElementById('leave-feedback');
+   const modal = document.querySelector('.modal');
+   const closeModalBtn = document.getElementById('close-modal-btn');
 
    benefitsBtns.forEach((btn, _, original) => {
        btn.addEventListener('click', e => {
@@ -43,10 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
        });
    });
 
-    // feedbacks swiper
+    // слайдер с отзывами
     const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
         loop: true,
+        allowTouchMove: false,
         spaceBetween: 10,
 
         navigation: {
@@ -54,4 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
             prevEl: '.swiper-button-prev',
         },
     });
+    // -------------------
+
+    leaveFeedback.addEventListener('click', () => modal.style.display = 'flex');
+    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
 });

@@ -9,6 +9,41 @@
     <script src="sources/libraries/swiper/swiper.min.js"></script>
 </head>
 <body>
+<section class="modal">
+    <article class="modal__feedback-modal">
+        <form class="feedback-modal-form" id="feedback-modal-form" action="#" method="POST">
+            <h3>Заполните текст отзыва и установите оценку</h3>
+            <div class="feedback-body">
+                <div class="rating">
+                    <input type="radio" id="rate5" name="rating" value="5">
+                    <label for="rate5"></label>
+
+                    <input type="radio" id="rate4" name="rating" value="4">
+                    <label for="rate4"></label>
+
+                    <input type="radio" id="rate3" name="rating" value="3">
+                    <label for="rate3"></label>
+
+                    <input type="radio" id="rate2" name="rating" value="2">
+                    <label for="rate2"></label>
+
+                    <input type="radio" id="rate1" name="rating" value="1">
+                    <label for="rate1"></label>
+
+                    <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating">
+                </div>
+                <div class="feedback-text-block">
+                    <textarea class="feedback-text" id="feedback-text" name="feedback-text"></textarea>
+                    <label for="feedback-text"></label>
+                </div>
+            </div>
+            <div class="feedback-modal-btns-block">
+                <button class="feedback-modal-btn send-feedback-modal-btn" id="send-feedback-modal-btn" type="submit">Отправить отзыв</button>
+                <button class="feedback-modal-btn close-modal-btn" id="close-modal-btn" type="button">Закрыть</button>
+            </div>
+        </form>
+    </article>
+</section>
 <main class="main-content">
     <header class="balance-header">
         <div class="balance-stats">
