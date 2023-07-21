@@ -464,7 +464,7 @@ input[name="rating"] + label {
 }
 
 input[name="rating"] + label:before {
-    content: '★';
+    content: '\2605';
     display: block;
     font-size: 40px;
     transition: color .2s;
@@ -546,11 +546,8 @@ input[name="rating"]:not(:last-child) {
 
 .story-table tr {
     cursor: pointer;
-    transition-duration: .3s;
-}
-
-.story-table tr:not(:last-child) {
     border-bottom: 1px solid var(--border-color);
+    transition-duration: .3s;
 }
 
 .story-table tr > td {
@@ -558,11 +555,11 @@ input[name="rating"]:not(:last-child) {
     font-size: 15px;
 }
 
-.story-table tr > td:first-child {
+table tr > td:first-child {
     border-radius: 7px 0 0 7px;
 }
 
-.story-table tr > td:last-child {
+table tr > td:last-child {
     border-radius: 0 7px 7px 0;
 }
 
@@ -577,4 +574,46 @@ input[name="rating"]:not(:last-child) {
 
 .show {
     display: block;
+}
+
+.story-body-btns-block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 130px;
+    padding: 0 10px 15px 0;
+}
+
+.story-body-btn {
+    width: 55px;
+    height: 32px;
+    border: 1px solid var(--main-color);
+    outline: none;
+    background-color: #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.business-btn,
+.chart-btn,
+.edit-btn {
+    background: no-repeat center / 16px;
+}
+
+.business-btn {
+    background-image: url('../img/business.svg');
+}
+
+.chart-btn {
+    background-image: url('../img/bar-chart.svg');
+}
+
+.edit-btn {
+    background-image: url('../img/edit-tools.svg');
+}
+
+.story-body-btn:not(:last-child) {
+    margin-right: 10px;
 }
