@@ -1,0 +1,363 @@
+:root {
+    --color-left-side: rgba(149, 155, 174, .25);
+    --main-color: #1976D2;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+html, body, .main-content {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    object-fit: cover;
+}
+
+.main-content {
+    padding: 0 20px;
+}
+
+.balance-header {
+    width: 100%;
+    height: 55px;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+}
+
+.balance-stats {
+    width: 100%;
+}
+
+.stats-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff
+}
+
+.stats-list > li {
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+}
+
+.stats-list > li > span:first-child {
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.stats-list > li > span:last-child {
+    font-size: 18px;
+}
+
+.stats-list > li:not(:last-child) {
+    border-right: 1px solid rgba(249, 249, 249, .3);
+}
+
+.section-body {
+    width: 100%;
+    display: flex;
+    padding-top: 30px;
+}
+
+.section-body__left-side {
+    width: 100%;
+    max-width: 390px;
+    border: 1px solid var(--color-left-side);
+    box-shadow: 0 0 10px 0 var(--color-left-side);
+    background-color: #fbfbfb;
+}
+
+.left-side__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 15px;
+    height: 55px;
+    border-bottom: 1px solid var(--color-left-side);
+}
+
+.left-side__header > h2 {
+    font-size: 24px;
+}
+
+.btns-block {
+    height: 100%;
+}
+
+.benefits-btn {
+    width: 80px;
+    height: calc(100% + 1px);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #959BAE;
+    transition: .4s;
+    border-bottom: 1px solid transparent;
+    font-size: 15px;
+}
+
+.benefits-btn:hover,
+.active {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}
+
+.left-side__body,
+.group {
+    width: 100%;
+}
+
+.left-side__body {
+    padding-top: 1px;
+}
+
+.group_wrapper {
+    border-bottom: 1px solid var(--color-left-side);
+}
+
+.group {
+    border-radius: 5px;
+    background-color: #CEE0F3;
+    height: 45px;
+    padding: 0 15px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.group > h3 {
+    font-family: 'Roboto Light', sans-serif;
+}
+
+.group.closed:after,
+.group.opened:after {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    background: no-repeat center / 100% 100%;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.group.closed:after {
+    background-image: url('../img/group_open.svg');
+}
+
+.group.opened:after {
+    background-image: url('../img/group_close.svg');
+}
+
+.group__group-body {
+    padding-left: 30px;
+    height: 0;
+    overflow: hidden;
+    transition: height .4s;
+}
+
+.group-table {
+    width: 100%;
+}
+
+.group-table {
+    border-collapse: collapse;
+}
+
+.group-table tr {
+    border-bottom: 1px solid var(--color-left-side);
+    cursor: pointer;
+    transition-duration: .4s;
+}
+
+.group-table label {
+    cursor: pointer;
+}
+
+.group-table label:before {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 17px;
+    background: url('../img/unchecked.svg') no-repeat center / 100% 100%;
+}
+
+.benefit-check {
+    display: none;
+}
+
+.benefit-check:checked + label:before {
+    background-image: url('../img/checked.svg');
+}
+
+.group-table tr:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.group-table tr:hover .benefit-check:not(:checked) + label:before {
+    background-image: url('../img/unchecked_white.svg');
+}
+
+.group-table tr:hover .benefit-check:checked + label:before {
+    background-image: url('../img/checked_white.svg');
+}
+
+.group-table tr > td:first-child {
+    width: 285px;
+    padding-left: 25px;
+}
+
+.group-table tr > td:last-child {
+    padding-right: 3px;
+}
+
+.group-table tr > td {
+    padding: 10px 0;
+}
+
+.left-side__btns-block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.left-side__btns-block > .btn {
+    width: 65px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+    background-color: #fff;
+    outline: none;
+    padding: 0 14px;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: var(--main-color);
+    position: relative;
+}
+
+.left-side__btns-block > .btn:first-child {
+    margin-right: 15px;
+}
+
+.scales-btn:before,
+.cart-btn:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: no-repeat center / 100% 100%;
+}
+
+.scales-btn:before {
+    background-image: url('../img/scales.svg');
+    left: 15%;
+}
+
+.cart-btn:before {
+    background-image: url('../img/cart.svg');
+    left: 20%;
+}
+
+.groups {
+    border-bottom: 1px solid var(--color-left-side);
+}
+
+.description,
+.main-description {
+    width: 100%;
+}
+
+.description {
+    padding: 20px 10px;
+}
+
+.main-description {
+    display: flex;
+    border-bottom: 1px solid var(--color-left-side);
+    padding-left: 10px;
+}
+
+.text-body {
+    padding-bottom: 10px;
+}
+
+.benefit-description {
+    padding: 18px 0 10px;
+    line-height: 24px;
+}
+
+.leave-feedback {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--main-color);
+    text-decoration: underline;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.leave-feedback:hover {
+    text-decoration: none;
+}
+
+.swiper {
+    width: 100%;
+    padding-left: 10px;
+}
+
+.swiper-slide > h3 {
+    font-size: 16px;
+}
+
+.stars {
+    width: 100%;
+    display: flex;
+}
+
+.stars > img:not(:last-child) {
+    margin-right: 5px;
+}
