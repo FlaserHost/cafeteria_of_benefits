@@ -130,11 +130,13 @@ table {
     font-size: 24px;
 }
 
-.btns-block {
+.btns-block,
+.tabs-block {
     height: 100%;
 }
 
-.benefits-btn {
+.benefits-btn,
+.files-tab {
     width: 80px;
     height: calc(100% + 1px);
     cursor: pointer;
@@ -147,7 +149,12 @@ table {
     font-size: 15px;
 }
 
+.files-tab {
+    width: auto;
+}
+
 .benefits-btn:hover,
+.files-tab:hover,
 .active {
     color: var(--main-color);
     border-bottom-color: var(--main-color);
@@ -519,7 +526,7 @@ input[name="rating"]:not(:last-child) {
 
 .feedback-text:focus {
     border-color: #66afe9;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
 }
 
 .feedback-modal-btns-block {
@@ -659,7 +666,8 @@ table tr > td:last-child {
 }
 
 .cart-block,
-.order-details {
+.order-details,
+.files_and_documents {
     width: 100%;
     border: 1px solid var(--border-color);
     border-radius: 7px;
@@ -672,7 +680,15 @@ table tr > td:last-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.section-body__right-side > article:not(:last-child) > div:first-child {
     padding: 15px 20px;
+}
+
+.section-body__right-side > article:last-child > div:first-child {
+    padding: 0 20px;
+    height: 53px;
 }
 
 .cart-update-btn {
@@ -782,6 +798,10 @@ table tr > td:last-child {
     border: 1px solid var(--border-color);
 }
 
+.has-value {
+    font-size: 13px;
+}
+
 input[type="date"] {
     position: relative;
 }
@@ -796,9 +816,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: auto;
     color: transparent;
     background: transparent;
+    cursor: pointer;
 }
 
 input[type="date"]:not(.has-value):before {
     content: attr(placeholder);
     width: 100%;
+    color: #757575;
+    font-size: 14px;
+}
+
+.files-tab {
+    padding: 20px;
+}
+
+.files-tab:first-child {
+    margin-right: 13px;
 }
