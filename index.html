@@ -11,7 +11,7 @@
 </head>
 <body>
 <section class="modal">
-    <article class="modal__feedback-modal">
+    <article class="modal-body modal__feedback-modal">
         <form class="feedback-modal-form" id="feedback-modal-form" action="#" method="POST">
             <h3>Заполните текст отзыва и установите оценку</h3>
             <div class="feedback-body">
@@ -41,6 +41,16 @@
             <div class="feedback-modal-btns-block">
                 <button class="feedback-modal-btn send-feedback-modal-btn" id="send-feedback-modal-btn" type="submit">Отправить отзыв</button>
                 <button class="feedback-modal-btn close-modal-btn" id="close-modal-btn" type="button">Закрыть</button>
+            </div>
+        </form>
+    </article>
+    <article class="modal-body modal__add-new-file-modal">
+        <form class="add-new-file-form" id="add-new-file-form" action="#" method="POST" enctype="multipart/form-data">
+            <h3>Загрузка документов</h3>
+            <div class="upload-body">
+                <div class="dropzone">
+                    <!-- доделать -->
+                </div>
             </div>
         </form>
     </article>
@@ -438,66 +448,36 @@
                     </div>
                 </div>
                 <div class="files-wrapper">
-                    <div class="files-items">
+                    <div class="files-items provider-files flex">
                         <div class="item">
-                            <a href="#" class="file word" id="file-1" download></a>
+                            <a href="#" class="file word" id="provider-file-1" download></a>
                             <span>Мед справка</span>
                         </div>
                         <div class="item">
-                            <a href="#" class="file pdf" id="file-2" download></a>
+                            <a href="#" class="file pdf" id="provider-file-2" download></a>
                             <span>Согласие на обработку</span>
                         </div>
                         <div class="item">
-                            <a href="#" class="file txt" id="file-3" download></a>
+                            <a href="#" class="file txt" id="provider-file-3" download></a>
                             <span>Приложение</span>
                         </div>
+                    </div>
+                    <div class="files-items my-files">
                         <div class="item">
-                            <a href="#" class="file word" id="file-1" download></a>
+                            <a href="#" class="file word" id="my-file-1" download></a>
                             <span>Мед справка</span>
                         </div>
                         <div class="item">
-                            <a href="#" class="file pdf" id="file-2" download></a>
+                            <a href="#" class="file pdf" id="my-file-2" download></a>
                             <span>Согласие на обработку</span>
                         </div>
                         <div class="item">
-                            <a href="#" class="file txt" id="file-3" download></a>
+                            <a href="#" class="file txt" id="my-file-3" download></a>
                             <span>Приложение</span>
                         </div>
                         <div class="item">
-                            <a href="#" class="file word" id="file-1" download></a>
-                            <span>Мед справка</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file pdf" id="file-2" download></a>
-                            <span>Согласие на обработку</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file txt" id="file-3" download></a>
-                            <span>Приложение</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file word" id="file-1" download></a>
-                            <span>Мед справка</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file pdf" id="file-2" download></a>
-                            <span>Согласие на обработку</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file txt" id="file-3" download></a>
-                            <span>Приложение</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file word" id="file-1" download></a>
-                            <span>Мед справка</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file pdf" id="file-2" download></a>
-                            <span>Согласие на обработку</span>
-                        </div>
-                        <div class="item">
-                            <a href="#" class="file txt" id="file-3" download></a>
-                            <span>Приложение</span>
+                            <button class="file add-file-btn" id="add-file-btn" type="button"></button>
+                            <span>Добавить документ</span>
                         </div>
                     </div>
                 </div>

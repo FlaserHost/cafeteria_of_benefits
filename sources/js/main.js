@@ -3,23 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
    const group = document.querySelectorAll('.group');
    const checkboxes = document.querySelectorAll('.benefit-check');
    const scalesBtn = document.getElementById('scales-btn');
+
    const leaveFeedback = document.getElementById('leave-feedback');
    const modal = document.querySelector('.modal');
+   const modalBody = document.querySelectorAll('.modal-body');
    const closeModalBtn = document.getElementById('close-modal-btn');
+
    const asideBodies = document.querySelectorAll('.aside-body-wrapper');
+
    const phoneNumber = document.getElementById('client-phone-field');
    const dateBirthField = document.getElementById('client-datebirth-field');
 
-   benefitsBtns.forEach((btn, _, original) => {
-       btn.addEventListener('click', e => {
-           if (!e.target.classList.contains('active')) {
-               original.forEach(item => item.classList.remove('active'));
-               e.target.classList.add('active');
-
-               asideBodies.forEach(item => item.classList.toggle('show'));
-           }
-       });
-   });
+   const filesTabs = document.querySelectorAll('.files-tab');
+   const filesContainers = document.querySelectorAll('.files-items');
+   const addNewFile = document.getElementById('add-file-btn');
 
    group.forEach(item => {
        item.addEventListener('click', e => {
@@ -67,8 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // -------------------
 
-    leaveFeedback.addEventListener('click', () => modal.style.display = 'flex');
-    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+    const modalOpener = modalBody => {
+        modal.style.display = 'flex'
+        modalBody.classList.add('show');
+    }
+
+    leaveFeedback.addEventListener('click', () => modalOpener(modalBody[0])); // открывает тело "Оставить отзыв"
+    addNewFile.addEventListener('click', () => modalOpener(modalBody[1])); // открывает тело "Добавить файл"
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none'
+        modalBody.forEach(body => body.classList.remove('show'));
+    });
 
     dateBirthField.addEventListener('change', e => {
         e.target.value !== ''
@@ -80,4 +86,21 @@ document.addEventListener('DOMContentLoaded', () => {
         "mask": "+7 (999) 99-99-999",
         showMaskOnHover: false
     }).mask(phoneNumber);
+
+    const toggler = (e, collection, original, visibleClass) => {
+        if (!e.target.classList.contains('active')) {
+            original.forEach(item => item.classList.remove('active'));
+            e.target.classList.add('active');
+
+            collection.forEach(item => item.classList.toggle(visibleClass));
+        }
+    }
+
+    benefitsBtns.forEach((btn, _, original) => {
+        btn.addEventListener('click', e => toggler(e, asideBodies, original, 'show'));
+    });
+
+    filesTabs.forEach((tab, _, original) => {
+        tab.addEventListener('click', e => toggler(e, filesContainers, original, 'flex'));
+    });
 });
