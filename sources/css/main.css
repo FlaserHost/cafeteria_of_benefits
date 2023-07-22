@@ -48,6 +48,14 @@ table {
     width: 100%;
 }
 
+::placeholder {
+    transition: color .3s;
+}
+
+:focus::placeholder {
+    color: transparent;
+}
+
 .main-content {
     padding: 0 20px;
 }
@@ -741,7 +749,11 @@ table tr > td:last-child {
 }
 
 .order-client-data-form {
-    padding: 0 18px;
+    padding: 10px 18px;
+}
+
+.order-block-header {
+    border-bottom: 1px solid var(--border-color);
 }
 
 .form-field {
@@ -764,7 +776,29 @@ table tr > td:last-child {
 .order-form-field {
     width: 100%;
     max-width: 468px;
-    padding: 5px;
+    padding: 7px;
+    font-size: 14px;
     outline: none;
     border: 1px solid var(--border-color);
+}
+
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+
+input[type="date"]:not(.has-value):before {
+    content: attr(placeholder);
+    width: 100%;
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="sources/libraries/swiper/swiper.min.css">
     <link rel="stylesheet" href="sources/css/main.css">
     <script src="sources/libraries/swiper/swiper.min.js"></script>
+    <script src="sources/libraries/inputmask/inputmask.min.js"></script>
 </head>
 <body>
 <section class="modal">
@@ -404,27 +405,27 @@
                 <form class="order-client-data-form" id="order-client-data-form" action="#" method="POST">
                     <div class="form-field">
                         <label for="client-lastname-field">Фамилия</label>
-                        <input class="order-form-field" id="client-lastname-field" type="text">
+                        <input class="order-form-field" id="client-lastname-field" name="client-lastname-field" type="text" placeholder="Романов">
                     </div>
                     <div class="form-field">
                         <label for="client-firstname-field">Имя</label>
-                        <input class="order-form-field" id="client-firstname-field" type="text">
+                        <input class="order-form-field" id="client-firstname-field" name="client-firstname-field" type="text" placeholder="Игорь">
                     </div>
                     <div class="form-field">
                         <label for="client-patronymic-field">Отчество</label>
-                        <input class="order-form-field" id="client-patronymic-field" type="text">
+                        <input class="order-form-field" id="client-patronymic-field" name="client-patronymic-field" type="text" placeholder="Викторович">
                     </div>
                     <div class="form-field">
                         <label for="client-datebirth-field">Дата рождения</label>
-                        <input class="order-form-field" id="client-datebirth-field" type="date">
+                        <input class="order-form-field" id="client-datebirth-field" name="client-datebirth-field" type="date" placeholder="22.06.1947">
                     </div>
                     <div class="form-field">
                         <label for="client-phone-field">Мобильный телефон</label>
-                        <input class="order-form-field" id="client-phone-field" type="tel">
+                        <input class="order-form-field" id="client-phone-field" name="client-phone-field" type="tel" placeholder="+7 (333) 33-43-633">
                     </div>
                     <div class="form-field">
                         <label for="client-email-field">E-mail</label>
-                        <input class="order-form-field" id="client-email-field" type="email">
+                        <input class="order-form-field" id="client-email-field" name="client-email-field" type="email" placeholder="example@inbox.ru">
                     </div>
                 </form>
             </article>

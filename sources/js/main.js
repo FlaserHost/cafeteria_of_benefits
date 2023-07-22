@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
    const modal = document.querySelector('.modal');
    const closeModalBtn = document.getElementById('close-modal-btn');
    const asideBodies = document.querySelectorAll('.aside-body-wrapper');
+   const phoneNumber = document.getElementById('client-phone-field');
+   const dateBirthField = document.getElementById('client-datebirth-field');
 
    benefitsBtns.forEach((btn, _, original) => {
        btn.addEventListener('click', e => {
@@ -67,4 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     leaveFeedback.addEventListener('click', () => modal.style.display = 'flex');
     closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+
+    dateBirthField.addEventListener('change', e => {
+        e.target.value !== ''
+            ? e.target.classList.add('has-value')
+            : e.target.classList.remove('has-value');
+    });
+
+    Inputmask({
+        "mask": "+7 (999) 99-99-999",
+        showMaskOnHover: false
+    }).mask(phoneNumber);
 });
