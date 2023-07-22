@@ -768,7 +768,8 @@ table tr > td:last-child {
     padding: 10px 18px;
 }
 
-.order-block-header {
+.order-block-header,
+.files_and_documents__block-header {
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -826,6 +827,11 @@ input[type="date"]:not(.has-value):before {
     font-size: 14px;
 }
 
+.files-wrapper {
+    width: 759.33px;
+    overflow: auto;
+}
+
 .files-tab {
     padding: 20px;
 }
@@ -836,12 +842,14 @@ input[type="date"]:not(.has-value):before {
 
 .files-items {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid: 1fr / repeat(10, minmax(83px, auto));
+    gap: 30px;
     padding: 20px;
 }
 
 .files-items > .item {
-    width: 83px;
+    width: 100%;
 }
 
 a.file {
@@ -871,10 +879,6 @@ a.file.txt {
     background-image: url('../img/right-side/txt.svg');
 }
 /* ------------------------- */
-
-.files-items > .item:not(:last-child) {
-    margin-right: 30px;
-}
 
 .item > span {
     width: 100%;
