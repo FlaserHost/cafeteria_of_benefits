@@ -701,7 +701,7 @@ table tr > td:last-child {
 }
 
 .files_and_documents__block-header {
-    padding: 15px 20px 0;
+    padding: 0 20px;
 }
 
 .cart-update-btn {
