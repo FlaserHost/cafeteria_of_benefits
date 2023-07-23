@@ -692,12 +692,16 @@ table tr > td:last-child {
     align-items: center;
 }
 
-.section-body__right-side > article:not(:last-child) > div:first-child {
-    padding: 15px 20px 0;
+.section-body__right-side > article:not(:last-child):not(.files_and_documents) > div:first-child {
+    padding: 15px 20px;
 }
 
 .section-body__right-side > article:last-child > div:first-child {
     padding: 0 20px;
+}
+
+.files_and_documents__block-header {
+    padding: 15px 20px 0;
 }
 
 .cart-update-btn {
