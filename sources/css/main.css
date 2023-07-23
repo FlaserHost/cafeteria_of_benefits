@@ -693,7 +693,7 @@ table tr > td:last-child {
 }
 
 .section-body__right-side > article:not(:last-child) > div:first-child {
-    padding: 15px 20px;
+    padding: 15px 20px 0;
 }
 
 .section-body__right-side > article:last-child > div:first-child {
