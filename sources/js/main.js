@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
    const filesTabs = document.querySelectorAll('.files-tab');
    const filesContainers = document.querySelectorAll('.files-items');
    const myFiles = document.querySelectorAll('div.file');
+   const subMenus = document.querySelectorAll('.my-files__submenu');
    const addNewFile = document.getElementById('add-file-btn');
 
    group.forEach(item => {
@@ -93,31 +94,37 @@ document.addEventListener('DOMContentLoaded', () => {
         showMaskOnHover: false
     }).mask(phoneNumber);
 
-    const toggler = (e, collection, original, visibleClass) => {
-        if (!e.target.classList.contains('active')) {
-            original.forEach(item => item.classList.remove('active'));
-            e.target.classList.add('active');
+    const toggler = (e, original, activeClass, visibleClass, collection = false) => {
+        if (!e.target.classList.contains(activeClass)) {
+            original.forEach(item => item.classList.remove(activeClass));
+            e.target.classList.add(activeClass);
 
-            collection.forEach(item => item.classList.toggle(visibleClass));
+            typeof collection === 'object' &&
+                collection.forEach(item => item.classList.toggle(visibleClass));
         }
     }
 
     benefitsBtns.forEach((btn, _, original) => {
-        btn.addEventListener('click', e => toggler(e, asideBodies, original, 'show'));
+        btn.addEventListener('click', e => toggler(e, original, 'active', 'show', asideBodies));
     });
 
     filesTabs.forEach((tab, _, original) => {
-        tab.addEventListener('click', e => toggler(e, filesContainers, original, 'flex'));
+        tab.addEventListener('click', e => toggler(e, original, 'active', 'flex', filesContainers));
     });
 
     fileChanger.addEventListener('click', () => fileInput.click());
 
     myFiles.forEach((file, _, original) => {
-        file.addEventListener('click', e => {
-           if (!e.target.classList.contains('clicked')) {
-               original.forEach(item => item.classList.remove('clicked'));
-               e.target.classList.add('clicked');
-           }
-        });
+        file.addEventListener('click', e => toggler(e, original, 'clicked', 'clicked'));
+    });
+
+    subMenus.forEach(item => {
+        item.addEventListener('click', e => e.stopPropagation());
+    })
+
+    document.addEventListener('click', e => {
+        const clicked = document.querySelector('.clicked');
+        !e.composedPath().includes(clicked) &&
+            myFiles.forEach(item => item.classList.remove('clicked'));
     });
 });
