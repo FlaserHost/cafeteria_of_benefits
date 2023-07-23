@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
    const leaveFeedback = document.getElementById('leave-feedback');
    const modal = document.querySelector('.modal');
    const modalBody = document.querySelectorAll('.modal-body');
-   const closeModalBtn = document.getElementById('close-modal-btn');
+   const closeModalBtns = document.querySelectorAll('.close-modal-btn');
+   const fileChanger = document.getElementById('change-files-btn');
+   const fileInput = document.getElementById('input-file');
 
    const asideBodies = document.querySelectorAll('.aside-body-wrapper');
 
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    const filesTabs = document.querySelectorAll('.files-tab');
    const filesContainers = document.querySelectorAll('.files-items');
+   const myFiles = document.querySelectorAll('div.file');
    const addNewFile = document.getElementById('add-file-btn');
 
    group.forEach(item => {
@@ -71,9 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     leaveFeedback.addEventListener('click', () => modalOpener(modalBody[0])); // открывает тело "Оставить отзыв"
     addNewFile.addEventListener('click', () => modalOpener(modalBody[1])); // открывает тело "Добавить файл"
-    closeModalBtn.addEventListener('click', () => {
-        modal.style.display = 'none'
-        modalBody.forEach(body => body.classList.remove('show'));
+
+    closeModalBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            modal.style.display = 'none'
+            modalBody.forEach(body => body.classList.remove('show'));
+        });
     });
 
     dateBirthField.addEventListener('change', e => {
@@ -102,5 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filesTabs.forEach((tab, _, original) => {
         tab.addEventListener('click', e => toggler(e, filesContainers, original, 'flex'));
+    });
+
+    fileChanger.addEventListener('click', () => fileInput.click());
+
+    myFiles.forEach((file, _, original) => {
+        file.addEventListener('click', e => {
+           if (!e.target.classList.contains('clicked')) {
+               original.forEach(item => item.classList.remove('clicked'));
+               e.target.classList.add('clicked');
+           }
+        });
     });
 });

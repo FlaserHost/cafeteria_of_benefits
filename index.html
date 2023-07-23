@@ -40,7 +40,7 @@
             </div>
             <div class="feedback-modal-btns-block">
                 <button class="feedback-modal-btn send-feedback-modal-btn" id="send-feedback-modal-btn" type="submit">Отправить отзыв</button>
-                <button class="feedback-modal-btn close-modal-btn" id="close-modal-btn" type="button">Закрыть</button>
+                <button class="feedback-modal-btn close-modal-btn" type="button">Закрыть</button>
             </div>
         </form>
     </article>
@@ -49,8 +49,20 @@
             <h3>Загрузка документов</h3>
             <div class="upload-body">
                 <div class="dropzone">
-                    <!-- доделать -->
+                    <div class="button-wrapper">
+                        <input class="input-file" id="input-file" name="input-file" type="file">
+                        <button class="change-files-btn" id="change-files-btn" type="button">Выберите файлы</button>
+                    </div>
+                    <div class="paste-wrapper">
+                        <span>или скопируйте скриншот сюда</span>
+                        <div class="paste-area" contenteditable="true"></div>
+                    </div>
+                    <span>или перетащите их на это поле</span>
                 </div>
+            </div>
+            <div class="add-new-file-form__final-btns">
+                <button class="final-btns__btn" id="send-files" type="submit">Отправить файлы</button>
+                <button class="final-btns__btn close-modal-btn" type="button">Отменить и закрыть</button>
             </div>
         </form>
     </article>
@@ -464,15 +476,48 @@
                     </div>
                     <div class="files-items my-files">
                         <div class="item">
-                            <a href="#" class="file word" id="my-file-1" download></a>
+                            <div class="file word" id="my-file-1">
+                                <nav class="my-files__submenu">
+                                    <ul>
+                                        <li class="submenu__item">
+                                            <a class="my-files-download-link" href="#" download>Скачать</a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <button class="my-files-delete-btn" type="button">Удалить</button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                             <span>Мед справка</span>
                         </div>
                         <div class="item">
-                            <a href="#" class="file pdf" id="my-file-2" download></a>
+                            <div class="file pdf" id="my-file-2">
+                                <nav class="my-files__submenu">
+                                    <ul>
+                                        <li class="submenu__item">
+                                            <a class="my-files-download-link" href="#" download>Скачать</a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <button class="my-files-delete-btn" type="button">Удалить</button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                             <span>Согласие на обработку</span>
                         </div>
                         <div class="item">
-                            <a href="#" class="file txt" id="my-file-3" download></a>
+                            <div class="file txt" id="my-file-3">
+                                <nav class="my-files__submenu">
+                                    <ul>
+                                        <li class="submenu__item">
+                                            <a class="my-files-download-link" href="#" download>Скачать</a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <button class="my-files-delete-btn" type="button">Удалить</button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                             <span>Приложение</span>
                         </div>
                         <div class="item">
