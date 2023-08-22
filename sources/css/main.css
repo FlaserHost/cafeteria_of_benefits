@@ -108,7 +108,7 @@ table {
 
 .section-body__left-side {
     width: 100%;
-    max-width: 390px;
+    max-width: 432px;
     border: 1px solid var(--border-color);
     box-shadow: 0 0 10px 0 var(--border-color);
     background-color: #fbfbfb;
@@ -602,10 +602,6 @@ table tr > td:last-child {
     display: none;
 }
 
-.show {
-    display: block;
-}
-
 .story-body-btns-block {
     width: 100%;
     display: flex;
@@ -669,6 +665,7 @@ table tr > td:last-child {
 .section-body__right-side {
     width: 100%;
     margin-left: 20px;
+    display: none;
 }
 
 .section-body__right-side > article:not(:first-child) {
@@ -1102,4 +1099,13 @@ input[type="date"]:not(.has-value):before {
 .hide-btn {
     visibility: hidden;
     pointer-events: none;
+}
+
+.my-benefits {
+    width: 100%;
+    display: none;
+}
+
+.show {
+    display: block;
 }

@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+   const sectionBody = document.getElementById('section-body');
    const benefitsBtns = document.querySelectorAll('.benefits-btn');
    const group = document.querySelectorAll('.group');
    const checkboxes = document.querySelectorAll('.benefit-check');
    const scalesBtn = document.getElementById('scales-btn');
+   const rightSection = document.getElementById('right-section');
 
    const leaveFeedback = document.getElementById('leave-feedback');
    const modal = document.querySelector('.modal');
@@ -99,8 +101,24 @@ document.addEventListener('DOMContentLoaded', () => {
             original.forEach(item => item.classList.remove(activeClass));
             e.target.classList.add(activeClass);
 
-            typeof collection === 'object' &&
-                collection.forEach(item => item.classList.toggle(visibleClass));
+            if (typeof collection === 'object') {
+                if (e.target.classList.contains('benefits-btn')) {
+                    const wrapper = +e.target.dataset.wrapper;
+                    collection.forEach(item => item.classList.remove(visibleClass));
+                    collection[wrapper].classList.add(visibleClass);
+
+                    if (wrapper !== 2) {
+                        rightSection.classList.add(visibleClass);
+                        sectionBody.style.flexDirection = 'row';
+                    }
+                    else {
+                        rightSection.classList.remove(visibleClass);
+                        sectionBody.style.flexDirection = 'column';
+                    }
+                } else {
+                    collection.forEach(item => item.classList.toggle(visibleClass));
+                }
+            }
         }
     }
 
