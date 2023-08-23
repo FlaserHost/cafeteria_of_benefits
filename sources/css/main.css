@@ -1164,6 +1164,8 @@ input[type="date"]:not(.has-value):before {
 
 .right-body > .col-header > .period {
     font-size: 14px;
+    margin: 0 10px;
+    text-align: center;
 }
 
 .right-body > .col-header time {
