@@ -674,7 +674,8 @@ table tr > td:last-child {
 
 .cart-block,
 .order-details,
-.files_and_documents {
+.files_and_documents,
+.my-benefits {
     width: 100%;
     border: 1px solid var(--border-color);
     border-radius: 7px;
@@ -1102,8 +1103,90 @@ input[type="date"]:not(.has-value):before {
 }
 
 .my-benefits {
-    width: 100%;
     display: none;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.my-benefits-table-wrapper {
+    margin-top: 15px;
+}
+
+.my-benefits-table-wrapper,
+.my-benefits-table {
+    width: 100%;
+}
+
+.my-benefits-table,
+.my-benefits-table tr,
+.my-benefits-table td {
+    border: 1px solid var(--border-color);
+    border-collapse: collapse;
+}
+
+.logo-col {
+    width: 150px;
+}
+
+.left-body,
+.right-body {
+    padding: 15px;
+}
+
+.left-body {
+    padding-bottom: 0;
+}
+
+.left-body h3 {
+    color: #1976D2;
+    font-size: 17px;
+}
+
+.left-text-col {
+    width: 50%;
+}
+
+.left-text-col pre {
+    white-space: pre-wrap;
+    margin-top: 10px;
+}
+
+.right-body > .col-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-body > .col-header > .stars {
+    width: 100px;
+    height: 15px;
+}
+
+.right-body > .col-header > .period {
+    font-size: 14px;
+}
+
+.right-body > .col-header time {
+    display: inline;
+}
+
+.right-body .points {
+    color: #8647CE;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.right-text-col {
+    vertical-align: top;
+}
+
+.right-text-block > .mini-title,
+.right-text-block > p {
+    margin-top: 15px;
+}
+
+.right-text-block > .mini-title {
+    font-weight: 900;
 }
 
 .show {
